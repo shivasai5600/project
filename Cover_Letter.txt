@@ -1,0 +1,17 @@
+Dear Hiring Manager,
+
+I am writing to apply for an Automation Test Engineer position at your organization. I have close to three years of experience working as an Automation Test Engineer, currently with Mphasis, where I support a large enterprise client, Hewlett-Packard Inc. Over this time, I have gained strong hands-on experience in building and maintaining Python-based automation frameworks for web applications.
+
+In my current role, I work extensively with Selenium WebDriver, Pytest, and the Page Object Model to design scalable and maintainable automation solutions. I have contributed to enhancing our automation framework, developing reusable Pytest fixtures and utilities, and improving overall test stability. I am also involved in integrating automated test execution with CI/CD pipelines using Azure DevOps, including running tests on pull requests to support continuous testing.
+
+One of my key responsibilities has been handling flaky tests and performing root cause analysis to improve pipeline reliability. I have also worked on optimizing execution time using parallel test runs with pytest-xdist. These efforts helped improve feedback cycles and ensured better test coverage in an Agile environment.
+
+I enjoy collaborating closely with developers, business analysts, and QA teams to understand requirements and deliver quality results. I am a quick learner, comfortable adapting to new tools and technologies, and I take ownership of the work I do.
+
+I am now looking for an opportunity where I can further grow my skills, contribute to challenging projects, and be part of a team that values quality and continuous improvement. I would welcome the chance to discuss how my experience and approach to automation testing can add value to your team.
+
+Thank you for your time and consideration.
+
+Sincerely,
+Punna Shiva Sai Ganesh
+Automation Test Engineer

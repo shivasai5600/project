@@ -1,0 +1,669 @@
+take  a list Swap the first and last element
+----------------------------------------------
+a=[1,2,3,4,5,6,7]
+a[0],a[-1] =a[-1],a[0]
+print(a)#[7, 2, 3, 4, 5, 6, 1]
+
+
+
+
+To print non repetitive element in list:
+----------------------------------------
+a=[1,2,1,2,3,3,4,5,6,7,7]
+b={}
+for i in a:
+ if i in b:
+     b[i] = b[i]+1
+ else:
+     b[i]=1
+print(b)
+c=[]
+for i in b:
+    if b[i]==1:
+        c.append(i)
+print(c)  
+##{1: 2, 2: 2, 3: 2, 4: 1, 5: 1, 6: 1, 7: 2}
+  [4, 5, 6]
+  
+To check the count of string:
+-------------------------------
+s = "abbcccddddeeeee"
+temp=''
+for i in s:
+    if i not in temp:
+        charCnt = s.count(i)
+        temp+=i+str(charCnt)
+print(temp) ## a1b2c3d4e6
+
+----------
+take a string in character and print highest character and count
+string ="aabbccddnnnnnnnnnn"
+char_count={}
+
+for char in string:
+    if char in char_count:
+        char_count[char] += 1
+    else:
+        char_count[char] = 1
+max_char = max(char_count,key=char_count.get)
+max_cout = char_count[max_char]
+print(f'the character is {max_char} the count is {max_cout}') #the character is n the count is 10
+        
+
+  
+Find middle element in list:
+------------------------------
+l=[1,2,7,4,5]
+mid=int(len(l)/2)
+a=l[mid]
+print(a) 
+## [4]
+
+Find common elements in two list:
+--------------------------------
+ l1=[1,2,3,4]
+ l2=[2,3,5,6]
+ new_l=[]
+ for i in l1:
+     if i in l2:
+         new_l.append(i)
+print(new_l)
+##[2,3]
+
+check list is empty or not:
+---------------------------------
+l=[]
+if len(l)==0:
+    print("list is empty")
+	
+Remove duplicates:
+---------------------	
+l=[1,3,5,6,5,1]
+l1=[]
+for i in l:
+    if i not in l1:
+        l1.append(i)
+print(l1)
+
+Remove the duplicates in list without using another list
+---------------------
+li = [1,2,2,7,8,8,3,5]
+i = 0
+li.sort()
+while i < len(li):
+    if li[i] == li[i+1]:
+        del li[i]
+    i +=1
+print(li)
+
+largest number from list:
+---------------------------
+l=[1,9,3,6]
+res=max(l)
+print(res)
+max=0
+for i in l:
+    if i>max:
+        max=i
+print(max) ## 9
+
+to find the second largest number
+---------------------------------
+arr= [1,2,8,2,9,6]
+sorted_arr = sorted(set(arr),reverse=True)
+        largest = sorted_arr[0]
+        second = sorted_arr[1]
+
+print(largest_arr)#9
+print(second)#8
+
+smallest number from list:
+------------------------------
+l=[2,3,5,7,1]
+min=l[0]
+for i in l:
+    if i<min:
+        min=i
+print(min) ## 1
+
+# multiply of elements:
+-------------------------
+l =[1,2,3]
+l1 =[4,5,6]
+res =[]
+
+for i in range(len(l)):
+    mul=l[i]*l1[i]
+    res.append(mul)
+print(res)#[4, 10, 18]
+
+--------------------------
+
+dict1={1:"a",2:"b",3:"c",4:"d"}
+dict2={1:"a",5:"e",6:"f"}
+
+if 1 in dict1 and 1 in dict2:
+    print(f'key 1 in dict1:{dict1[1]}')
+    print(f'key 1 in dict2:{dict2[1]}')
+else:
+    print("key 1 is not dictionary")
+o/p:
+key 1 in dict1:a
+key 1 in dict2:a
+
+--
+Merge two dict to one dict:
+----------------------------
+dict1={1:"c",2:"f",3:"k",5:"z"}
+dict2={4:"p",7:"o",6:"d"}
+dict3={"id":1123,"name":"Malli"}
+l = [dict1,dict2,dict3]
+new ={}
+for i in l:
+    for a,b in i.items():
+        new.update({a:b})
+#print(new) ## {1: 'c', 2: 'f', 3: 'k', 5: 'z', 4: 'p', 7: 'o', 6: 'd', 'id': 1123, 'name': 'malli'}
+
+Convert to dict:
+------------------------
+l = [(1, "a"), (2, "b"), (3, "c")]
+dic ={}
+for a,b in l:
+    dic.update({a:b})
+print(dic) ##{1: 'a', 2: 'b', 3: 'c'}
+
+convert list dict to tuple using list comphersion
+-------------------
+d = {1:'a',2:'b',3:'c'}
+
+a = list((value,key) for key,value in d.items())
+print(a) ## [('a', 1), ('b', 2), ('c', 3)]
+
+Join two list to dict:
+------------------------
+list1=[1,2,3,4]
+list2=['a','b','c','d']
+out ={}
+for i in list1:
+    for l in list2:
+        out[i]=l
+        list2.remove(l)
+        break
+print(out)  ##{1: 'a', 2: 'b', 3: 'c', 4: 'd'}
+
+find the count of vowels in given strings:
+-------------------------------------------
+l=['a','e','i','o','u']
+s="Programming"
+count =0
+for i in l:
+    if i in s:
+        count +=1
+print(count) ##3
+
+find the count of letter in string:
+----------------------------------
+s1="sooraj"
+s2="j"
+count =0
+for i in s1:
+    if i==s2:
+        count +=1
+print(count) ##1
+
+List of characters into string:
+-------------------------------
+	
+b =''.join(s1)
+print(b) ##malli
+
+To join first latters in both strings:
+--------------------------------------
+
+a = "malli"
+b = "malli"
+c = ''
+for i in range(0,len(b)):
+    c=c+a[i]+b[i]
+print(c) ##mmaallllii
+
+checking palindrome or not
+--------------------------------------------------
+1.Using the reverse and compare method
+a = "madam"
+if (a==a[::-1]):
+    print("the string is palindrome")
+else:
+    print("the string is not palindrome")
+	
+2.Using for loop
+a = "madam"
+rev = ""
+for i in a:
+    rev = i+rev
+print(rev)
+
+if (a==rev):
+    print("palindrome")
+else:
+    print("not")
+	
+3.Using while loop with number
+def palindrome(num):
+    temp = num
+    rev = 0
+    while num > 0:
+        rem =num%10
+        rev =rev*10+rem
+        num = num//10
+    if temp == rev:
+        print("palindrome")
+    else:
+        print("not palindrome")
+        
+palindrome(112)
+
+4.No of planidrome in given string
+s = "How is Chandhan dad malayalam"
+rev = s.split()
+count = 0
+for i in rev:
+    if i == i[::-1]:
+        print(i)
+        count +=1
+print(count)
+##dad
+malayalam
+2
+Reverse of a String:
+--------------------
+1.reverse a full sentence:
+a = "Hello Malli how are you doing"
+b = a.split()[::-1]
+c =[]
+print(b)
+for i in b:
+    c.append(i)
+print(" ".join(c)) ##doing you are how Malli Hello
+
+2.reverse single single word:
+a = "This is malli"
+b =a.split()
+for i in range(len(b)):
+    b[i] = b[i][::-1]
+print(" ".join(b)) ##sihT si illam
+
+3.reverse a sentence as it is
+S = i.like.this.program.very.much
+class Solution:
+    
+    #Function to reverse words in a given string.
+    def reverseWords(self,S):
+        b=S.split('.')
+        c =b[::-1]
+        return ".".join(c) ##i.like.this.program.very.much
+
+Factorial of a Number
+---------------------
+num = 8
+fac = 1
+if num < 0 or num == 0:
+    print("The Factorial of 0 is 1")
+else:
+    for i in range(1,num +1):
+        fac = fac*i
+    print("The factorial of",num,"is",fac) ## The factorial of 8 is 40320
+
+Prime No or not
+-----------------
+num = 9
+if num > 1:
+    for i in range(2,num):
+        if num % i ==0:
+            print(num,"is not a prime number")
+            break
+    else:
+        print(num,"is a prime number")
+else:
+    print("please check number")
+	
+Fibonaccie Series
+------------------
+
+def fibonaccieSeries(num):
+    n1, n2 = 0, 1
+    sum = 0
+    if num < 0:
+        return 0
+    else:
+        for i in range(0, num):
+            print(sum, end=' ')
+            n1 = n2
+            n2 = sum
+            sum = n1 + n2
+fibonaccieSeries(4)
+
+Pyramid
+-----------
+row = 6
+for i in range(row):
+    for j in range(i+1):
+       print(j+1,end='')
+    print()
+
+dict = {'a': 1, 'b': 2, 'c': 3}
+new = {}
+
+Swap key and value in dict
+----------------------
+1.using list comphersion:
+dict = {'a': 1, 'b': 2, 'c': 3}
+print(dict)
+
+dict = {value:key for key, value in dict.items()}
+print(dict)
+2.using loop
+dict = {'a': 1, 'b': 2, 'c': 3}
+new ={}
+for a,b in dict.items():
+    new[b] = a
+print(new) ##{1: 'a', 2: 'b', 3: 'c'}
+
+Convert dict to list
+---------------------------------------------------------------
+dict = {'a': 1, 'b': 2, 'c': 3}
+
+l = list(dict.items())
+print(l)
+
+program to print names where company=TCS
+--------------------------------------
+d1 = {'name':'Mohith','age':23,'DOJ':'24','Company':'LT'}
+d2 = {'name':'Amith','age':24,'DOJ':'25','Company':'LT'}
+d3 = {'name':'Bharath','age':25,'DOJ':'28','Company':'TCS'}
+d4 = {'name':'Varun','age':26,'DOJ':'29','Company':'TCS'}
+d5 = {'name':'Raju','age':26,'DOJ':'29','Company':'TCS'}
+
+l = [d1,d2,d3,d4,d5]
+
+for i in l:
+    if i.get("Company")=="TCS":
+        print(i.get("age"))
+		
+To check given no is binary or not
+-------------------------------------
+num = int(input("Please enter the number: "))
+if num >= 0:
+    res = num % 10
+    if res != 0 and res != 1:
+        print(num, "is not a binary number")
+    else:
+        print(num, "is a binary number")
+		
+Move specific no to end
+--------------------
+a = [2,0,3,0,2,5,5,6,0,5]
+c=0
+for i in range(len(a)):
+        if a[i]!=0:
+            temp = a[i]
+            a[i] = a[c]
+            a[c] = temp
+            c+=1
+print(a)
+
+a = [2,0,3,0,2,5,5,6,0,5]
+non = []
+zero = []
+for i in a:
+    if i == 0:
+        zero.append(i)
+    else:
+        non.append(i)
+non.extend(zero)
+print(non)
+
+
+Regular Excepression
+
+import re
+
+To print the characters [a-n]
+-----------------------
+txt = 'Malli is Poor'
+z = re.findall('[A-Q]',txt)
+print(z) ##['M','P']
+
+to print only numbers \d and \D = it will print only characters
+---------------------
+txt = 'Malli is Poor 45 81'
+z = re.findall('\d',txt)
+print(z) #['4', '5', '8', '1']
+
+to print middle or any characters 'M...i'
+-------------------------------
+txt = 'Malli is Poor & %'
+z = re.findall('....i',txt)
+print(z) ##['Malli']
+
+to check starting string '^Malli'
+-------------------------
+txt = 'Malli is Poor & %'
+z = re.findall('^Malli',txt)
+if z:
+    print("yes")
+else:
+    print("no") ##yes
+	
+To check the ending string 'Poor$'
+----------------------------
+txt = 'Malli is Poor'
+z = re.findall('Poor$',txt)
+if z:
+    print("yes")
+else:
+    print("no") ##yes
+	
+To print characters in the middle 'M.*l'
+---------------------------------
+txt = 'Malli is Poor 56'
+z = re.findall('M.*l',txt)
+print(z) ##Mall
+
+To print middle characters in given string '{2}'
+-------------------------------------------
+txt = 'Malli is Poor 56'
+z = re.findall('Ma.{2}i',txt)
+print(z) ##Malli
+
+To check the starting string  '\A'
+----------------------------
+txt = 'Malli is Poor 56 Mai Malli'
+z = re.findall('\AMa',txt) 
+print(z) ##Ma 
+
+to print the spaces \s and \S=it will print all the characters without space
+-------------------
+txt = 'Malli is Poor 56 '
+z = re.findall('\s',txt)
+print(z) ##['','','']
+
+To print all the characters  \w and to print all the spaces=\W
+txt = 'Malli is Poor 56 hf_gd  '
+z = re.findall('\w',txt)
+print(z) ##['M', 'a', 'l', 'l', 'i', 'i', 's', 'P', 'o', 'o', 'r', '5', '6', 'h', 'f', '_', 'g', 'd']
+
+to check the end worls \Z
+-----------------------------
+txt = 'Malli is Poor 56 hf_gd'
+z = re.findall('hf_gd\Z',txt)
+print(z) #['hf_gd']
+ 
+capitalize first and last character of
+--------------------------------------
+s = "welcome malli"
+b = s.split()
+c = []
+print(b)
+for i in b:
+    x = i[0].upper()+i[1:-1]+i[-1].upper()
+    c.append(x)
+c = ' '.join(c)
+print(c) ##WelcomE MallI
+
+To Capitalize off of the string
+--------------------------------
+test_str = 'geeksforgeeks'
+res = ''
+off = len(test_str) // 2
+for i in range(len(test_str)):
+    if i >= off:
+        res += test_str[i].upper()
+    else:
+        res += test_str[i]
+print(str(res))
+
+To remove special character
+---------------------------
+a = 'prashant%%* *is$# %&%a(&^ &^bad*!@ boy&%#'
+b = ''
+for i in a:
+    if i.isalpha() or i.isspace():
+        b += i
+print(b) ##prashant is a bad boy
+
+write a program to define *args **kwargs
+----------------------------------------
+
+def example(*args,**kwargs):
+    print("position argument",args)
+    
+    print('keyword argument',kwargs)
+    
+example(1,2,3,4,name='malli',age=30) 
+
+position argument (1, 2, 3, 4)
+keyword argument {'name': 'malli', 'age': 30}
+
+To change the nested list to tuple => isinstance - The isinstance() function returns True if the specified object is of the specified type, otherwise False. 
+-----------------------------------
+l = [[1,2,3],4,5,[6,7,8]]
+f = []
+for i in l:
+    if isinstance(i,list):
+        f.append(tuple(i))
+    else:
+        f.append(i) 
+print(f)    ##[(1, 2, 3), 4, 5, (6, 7, 8)]
+
+print square of even number cube of odd number  =>enumerate =we also need to keep a count of iterations.
+----------------------------------------------
+l = [1,2,3,4,5]
+c = [x**3 if i % 2 == 0 else x**2 for i,x in enumerate(l)]
+print(c)  
+
+
+To combin two list to dict using zip function
+---------------------------------------------
+
+questions = ['name', 'location', 'favorite language']
+answers = ['Codersdaily', 'Indore', 'Python']
+
+for q,a in zip(questions,answers):
+    print('what is you {0}? It is a {1}.'.format(q, a))
+=>	
+What is your name?  It is Codersdaily.
+What is your location?  It is the Indore.
+What is your favorite language?  It is Python.
+
+To create new dictoniary 
+-------------------------
+x = {i: i**2 for i in (1,2,3)}
+
+## {1: 1, 2: 4, 3: 9}
+
+normal way
+c  ={}
+for i in (1,2,3,4):
+    c[i] = i**2
+print(c)
+## {1: 1, 2: 4, 3: 9}
+
+input_list = ['1', 1, '2', 1.5, 2.5, 2, [1, 2, 3, 4, 5], {'a': '1', 'b': '2'}]
+
+output_dict = {'str': [],'list':[],'float':[],'int':[],'dict':[]}
+
+for item in input_list:
+    if isinstance(item,str):
+        output_dict['str'].append(item)
+    elif isinstance(item,list):
+        output_dict['list'].append(item)
+    elif isinstance(item,float):
+        output_dict['float'].append(item)
+    elif isinstance(item,dict):
+        output_dict['dict'].append(item)
+print(output_dict)
+
+
+def match_pattren(sentence,pattern):
+    words = sentence.split()
+    
+    if len(words) != len(pattern):
+        return False
+        
+    pattern_to_word = {}
+    word_to_pattern = {}
+    
+    for p_char, word in zip(pattern,words):
+        if p_char in pattern_to_word:
+            if pattern_to_word[p_char] != word:
+                return False
+        else:
+            pattern_to_word = word
+            
+        if word in word_to_pattern:
+            if word_to_pattern[word] != p_char:
+                return False
+        else:
+            word_to_pattern[word] = p_char
+    return True
+    
+print(match_pattren("Hello Bye Bye Hello",'abba'))
+print(match_pattren("Hello Bye Hello Bye",'abba'))
+
+
+---------------------
+reverse the string in line
+
+list = ["well","come","to","mpahsis"]
+for i in list:
+    print(i[::-1])
+output:llew
+       emoc
+       ot
+       sishapm
+
+or using two lops
+list = ["well","come","to","mphasis"]
+
+for i in list:
+    rev=""
+    for j in i:
+        rev=j+rev
+    print(rev)
+output:llew
+       emoc
+       ot
+       sishapm
+
+--------------
+#factroails
+ def fact(n):
+#
+#     if (n==0):
+#         return 1
+#     return n * fact(n-1)
+#
+# result = fact(5)
+# print(result)
+    

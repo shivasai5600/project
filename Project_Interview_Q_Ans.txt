@@ -1,0 +1,363 @@
+Perfect — with **your current skill set (Python + Selenium + Pytest + BDD + API + DB + CI/CD + TestRail + Jira)**, companies will test you at **3 levels**:
+
+1️⃣ **Core Automation Skills**
+2️⃣ **Framework / Design / Maintainability**
+3️⃣ **Real-world Project & CI/CD Integration**
+
+Below is a **market-realistic question set** that **Product companies and Big MNCs** actually ask — with **clear, interview-ready answers**.
+
+---
+
+# 🧩 1️⃣ CORE SELENIUM + PYTHON QUESTIONS
+
+## Q1. Difference between `find_element` and `find_elements`?
+
+**Expected Answer:**
+
+* `find_element` → returns **one WebElement**, throws `NoSuchElementException`
+* `find_elements` → returns **list**, returns empty list if not found
+
+👉 Used `find_elements` when elements may or may not exist.
+
+---
+
+## Q2. Why Explicit Wait is preferred over `time.sleep()`?
+
+**Answer:**
+
+* Explicit wait waits **only until condition is met**
+* Reduces execution time
+* Improves test stability
+* Handles dynamic UI
+
+```python
+WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable(locator)
+)
+```
+
+---
+
+## Q3. How do you handle dropdowns?
+
+**Answer:**
+
+* HTML `<select>` → `Select` class
+* Custom dropdown → click + iterate elements
+
+---
+
+## Q4. How do you handle multiple windows?
+
+**Answer:**
+
+```python
+parent = driver.current_window_handle
+for handle in driver.window_handles:
+    if handle != parent:
+        driver.switch_to.window(handle)
+```
+
+---
+
+## Q5. How do you handle file upload?
+
+**Answer:**
+
+```python
+driver.find_element(By.ID, "upload").send_keys("C:/file.txt")
+```
+
+---
+
+# 🧩 2️⃣ PYTEST FRAMEWORK QUESTIONS (VERY IMPORTANT)
+
+## Q6. What is `conftest.py`?
+
+**Answer:**
+
+* Central place for fixtures
+* No import required
+* Manages setup/teardown
+
+---
+
+## Q7. Difference between fixture and normal setup?
+
+**Answer:**
+
+* Fixtures are reusable
+* Support scopes (function, class, session)
+* Dependency injection
+
+---
+
+## Q8. How do you run tests in parallel?
+
+**Answer:**
+
+```bash
+pytest -n 4
+```
+
+Using `pytest-xdist`
+
+---
+
+## Q9. How do you rerun failed tests?
+
+**Answer:**
+
+```bash
+pytest --reruns 2
+```
+
+Using `pytest-rerunfailures`
+
+---
+
+## Q10. What markers did you use?
+
+**Answer:**
+
+* smoke
+* sanity
+* regression
+
+---
+
+# 🧩 3️⃣ PAGE OBJECT MODEL (POM)
+
+## Q11. Why Page Object Model?
+
+**Answer:**
+
+* Separation of test logic and UI locators
+* Improves maintainability
+* Enhances reusability
+
+---
+
+## Q12. What is BasePage?
+
+**Answer:**
+
+* Common actions (click, send_keys)
+* Centralized waits
+* Reduces duplicate code
+
+---
+
+## Q13. How do you handle UI changes?
+
+**Answer:**
+
+* Update locators in Page class only
+* No test code changes
+
+---
+
+# 🧩 4️⃣ BDD (pytest-bdd) QUESTIONS
+
+## Q14. Difference between BDD and normal Pytest?
+
+**Answer:**
+
+* BDD uses Gherkin (Given-When-Then)
+* Business-readable scenarios
+* Better collaboration with non-technical teams
+
+---
+
+## Q15. What are Step Definitions?
+
+**Answer:**
+
+* Python methods mapped to Gherkin steps
+* Reusable across scenarios
+
+---
+
+## Q16. How do you avoid duplicate steps?
+
+**Answer:**
+
+* Parameterized steps
+* Generic step definitions
+
+---
+
+# 🧩 5️⃣ API AUTOMATION (PRODUCT COMPANIES FOCUS)
+
+## Q17. How did you automate APIs?
+
+**Answer:**
+
+* Python `requests` library
+* Separate API client classes
+* Validated status codes, schema, response data
+
+---
+
+## Q18. Difference between UI and API tests?
+
+| UI           | API            |
+| ------------ | -------------- |
+| Slow         | Fast           |
+| UI dependent | UI independent |
+| Flaky        | Stable         |
+
+---
+
+## Q19. How do you handle authentication?
+
+**Answer:**
+
+* Token-based authentication
+* Store token globally via fixtures
+
+---
+
+# 🧩 6️⃣ DATABASE VALIDATION (MNC FAVORITE)
+
+## Q20. Why DB validation?
+
+**Answer:**
+
+* Ensure backend data integrity
+* Verify UI → DB consistency
+
+---
+
+## Q21. How did you connect to DB?
+
+**Answer:**
+
+* `psycopg2` / `mysql-connector`
+* Read-only queries
+
+---
+
+## Q22. Example validation?
+
+**Answer:**
+
+* Policy created in UI → verify record exists in DB
+
+---
+
+# 🧩 7️⃣ CI/CD (VERY HIGH WEIGHT)
+
+## Q23. How is Jenkins used?
+
+**Answer:**
+
+* Triggered on PR
+* Smoke + API tests
+* Nightly regression
+
+---
+
+## Q24. How do you handle failures in CI?
+
+**Answer:**
+
+* Capture logs & screenshots
+* Rerun flaky tests
+* Fail pipeline only on real issues
+
+---
+
+## Q25. How do you integrate TestRail?
+
+**Answer:**
+
+* Map automation to TestRail IDs
+* Update execution status via API
+
+---
+
+# 🧩 8️⃣ FLaky TEST HANDLING (PRODUCT COMPANY MUST)
+
+## Q26. What causes flaky tests?
+
+**Answer:**
+
+* Dynamic elements
+* Poor waits
+* Network issues
+
+---
+
+## Q27. How do you fix them?
+
+**Answer:**
+
+* Explicit waits
+* Retry logic
+* Stable locators
+* Remove sleeps
+
+---
+
+# 🧩 9️⃣ BEHAVIORAL + PROJECT QUESTIONS
+
+## Q28. Explain your framework in 2 minutes
+
+👉 Use the answer I gave you earlier.
+
+---
+
+## Q29. Biggest challenge?
+
+**Answer:**
+
+* UI instability — fixed using waits & retries
+
+---
+
+## Q30. How do you decide what to automate?
+
+**Answer:**
+
+* High-risk
+* High-repeat
+* Business-critical flows
+
+---
+
+# 🏢 WHAT PRODUCT vs MNC COMPANIES FOCUS ON
+
+| Area          | Product | MNC  |
+| ------------- | ------- | ---- |
+| API & DB      | ⭐⭐⭐⭐    | ⭐⭐⭐  |
+| CI/CD         | ⭐⭐⭐⭐    | ⭐⭐⭐  |
+| Framework     | ⭐⭐⭐⭐    | ⭐⭐⭐⭐ |
+| Process       | ⭐⭐      | ⭐⭐⭐⭐ |
+| Documentation | ⭐⭐      | ⭐⭐⭐  |
+
+---
+
+# 🎯 FINAL INTERVIEW STRATEGY FOR YOU
+
+### Focus On Saying:
+
+* Framework ownership
+* Reusability %
+* CI integration
+* Flaky handling
+* API + UI combo
+
+👉 This places you above **70% of candidates**.
+
+---
+
+If you want next:
+
+* ✅ **Mock interview (Product company)**
+* ✅ **Mock interview (MNC)**
+* ✅ **Live coding questions**
+* ✅ **System design for test automation**
+* ✅ **Resume bullets per company type**
+
+Just tell me which one 🎯

@@ -1,0 +1,34 @@
+Jenkins --------------- setup and install, which supports only jdk11 for it.
+
+1. change the password in right side of page >> click admin button.
+--> open cmd check java version, if it is there now java -jar Jenkins.war --httpPort9090
+--> open the browser type localhost:8080
+2.in Dashboard,
+   2.1 new Item >> where we create a new job to automate the test cases, etc
+   2.2 people   >> how people are there in the organization to this project or job
+   2.3 build history >> history about the job
+   2.4 Manage Jenkins >> mangae Jenkins tools
+   2.5 my views >> personal view about jobs, history etc
+3.we can automate the script by writing the commands in cmd, and pass and create a job in jenkin
+  pass the everything in it
+4. using variables also we can automate the scripts
+5.Using parametrize method we can do it
+6.what u write in cmd for the path and execute commands , write in build of a job , and then execute the build now
+
+---How to automate testcases from GitHub in Jenkins --------
+1. Create a job in Jenkins
+2. In Source Code Management >> select 'git'
+   >> git repo url
+   >> credentials by clicking add button
+3. select branch '%main'
+4. in BUILD >> select Execute Window batch window
+5. in command -- pytest --browser %browser% --url %url% --html=reportgit.html
+   >> for this we need to Parametrize >> choose parametrize
+   5.1 >> browser
+      chrome
+      edge
+      firefox
+   5.2 >> url
+      http://yatra.com
+      http://ga.yatra.com
+6. Run build now
